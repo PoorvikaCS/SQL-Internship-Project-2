@@ -35,51 +35,39 @@ Views Created
 3. CountrySummary
    Summarizes total confirmed cases, deaths, recoveries, and recovery rate for each country.
 
-Sample Analytical Queries
 
- Interview Questions and Answers
+>> Interview Questions and Answers
 
 1. What was the objective of your COVID SQL project?
-   Answer:
    The objective was to analyze the spread and trends of COVID-19 using SQL. I used queries and views to track daily increases, get country-wise summaries, and compute recovery rates.
 
 2. Which SQL functions did you use in this project?
-   Answer:
    I used window functions like LAG() to calculate daily increases, GROUP BY for summaries, JOINs for subqueries, and ROUND() to format recovery rates.
 
 3. How did you calculate the daily new cases?
-   Answer:
    I used the LAG() function to get the previous day's cases and subtracted them from the current day’s cases to get the daily increase.
 
 4. What does the LatestCountryStats view show?
-   Answer:
    It shows the most recent available report for each country by selecting the max date per country and joining it with the main table.
 
 5. How did you compute the recovery rate?
-   Answer:
    Using the formula:
-
 ```sql
 ROUND(100.0 * SUM(Recoveries) / SUM(ConfirmedCases), 2)
 ```
 This was used in the CountrySummary view.
 
 6. What challenges did you face while building this project?
-   Answer:
    Handling NULLs and ensuring correct date ordering for the window function. I also had to simulate realistic data manually while maintaining logical growth in case counts.
 
 7. Can this project be extended further?
-   Answer:
    Yes, it can include more countries, columns like tests performed or vaccinations, and even integrate with dashboards using Python libraries like Pandas and Plotly.
 
 8. Why did you choose SQLite for this project?
-   Answer:
    SQLite is lightweight, doesn't need server setup, and DB Browser makes it easy to run, test, and visualize queries. It's perfect for compact SQL analytics projects.
 
 9. How did you validate your results?
-   Answer:
    I checked data manually and used SELECT queries on views to compare computed values with expected trends. Also, I ensured row counts and date sequences were correct.
 
 10. What did you learn from this project?
-    Answer:
     I strengthened my understanding of SQL queries, views, aggregation, window functions, and analytical reporting using SQL. It also taught me how to simulate and clean data for a real-world scenario.
